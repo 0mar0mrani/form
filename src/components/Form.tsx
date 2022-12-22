@@ -93,6 +93,12 @@ export default function Form() {
 		}
 	}
 
+	function onSubmit(event) {
+		event.preventDefault();
+
+		console.log('Post request!!');
+	}
+
 	return (
 		<form action="/">
 			<TextInput 
@@ -108,7 +114,7 @@ export default function Form() {
 			/>
 
 			<PrimaryButton 
-				// submitMethod={} 
+				submitMethod={onSubmit} 
 				isDisabled={!isFormValid}
 			/>
 		</form>
