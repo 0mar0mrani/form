@@ -104,13 +104,13 @@ export default function Form() {
 			<TextInput 
 				placeholderText="Fornavn" 
 				onInput={handleFirstNameInput} 
-				// message={}
+				isValid={currentData.firstName.isValid}
 			/>
 
 			<TextInput 
 				placeholderText="Etternavn" 
 				onInput={handleLastNameInput} 
-				// message={}
+				isValid={currentData.lastName.isValid}
 			/>
 
 			<PrimaryButton 

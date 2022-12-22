@@ -1,4 +1,4 @@
-export default function TextInput({ placeholderText, onInput, message}) {
+export default function TextInput({ placeholderText, onInput, isValid}) {
 	return (
 		<div>
 			<input
@@ -9,7 +9,8 @@ export default function TextInput({ placeholderText, onInput, message}) {
 			/>
 
 			<div 
-				className="form__input-message">{message}
+				className="form__input-message">
+				{isValid ? '' : 'Feil: Fyll ut med bokstaver (inkludert mellomrom og bindestrek).'}
 			</div>
 		</div>
 	)
