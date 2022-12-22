@@ -21,6 +21,10 @@ export default function Form() {
 		},
 	})
 
+	useEffect(() => {
+		setFormValidationBasedOnElementValidation();
+	}, [currentData.firstName.value, currentData.lastName.value,])
+
 	function handleFirstNameInput(event) {
 		const key = 'firstName';
 		const textInputValue = event.currentTarget.value;
@@ -57,6 +61,26 @@ export default function Form() {
 				isValid: isInputValid, 
 			},
 		}));
+	}
+
+	function setFormValidationBasedOnElementValidation () {
+		const containNoFalse = 0;
+		const arrayOfFalse: boolean[] = [];
+
+
+		for (const formSection in currentData) {
+			const formSectionObject = currentData[formSection];
+
+			if (!formSectionObject.isValid) {
+				arrayOfFalse.push(false) ;
+			}
+		}
+
+		if (arrayOfFalse.length === containNoFalse) {
+			setFormValidation(true) 
+		} else {
+			setFormValidation(false) 
+		}
 	}
 
 	function returnContainsOnlyLetters(key: string) {
