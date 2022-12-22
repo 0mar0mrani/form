@@ -25,11 +25,24 @@ export default function Form() {
 		const key = 'firstName';
 		const textInputValue = event.currentTarget.value;
 
+		setCurrentDataValue(key, textInputValue);
 	}
 
 	function handleLastNameInput(event) {
 		const key = 'lastName';
 		const textInputValue = event.currentTarget.value;
+
+		setCurrentDataValue(key, textInputValue);
+	}
+
+	function setCurrentDataValue(key: string, textInputValue: string) {
+		setCurrentData(currentData => ({
+			...currentData, 
+			[key]: {
+				...currentData[key], 
+				value: textInputValue, 
+			},
+		}));
 	}
 
 	return (
