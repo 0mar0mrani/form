@@ -24,6 +24,7 @@ export default function Form() {
 	function handleFirstNameInput(event) {
 		const key = 'firstName';
 		const textInputValue = event.currentTarget.value;
+		const isInputValid = returnContainsOnlyLetters(textInputValue);
 
 		setCurrentDataValue(key, textInputValue);
 	}
@@ -31,6 +32,7 @@ export default function Form() {
 	function handleLastNameInput(event) {
 		const key = 'lastName';
 		const textInputValue = event.currentTarget.value;
+		const isInputValid = returnContainsOnlyLetters(textInputValue);
 
 		setCurrentDataValue(key, textInputValue);
 	}
@@ -43,6 +45,16 @@ export default function Form() {
 				value: textInputValue, 
 			},
 		}));
+	}
+
+	function returnContainsOnlyLetters(key: string) {
+		const letters = /^[a-åA-Å\s-]+$/;
+
+		if (letters.test(key)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	return (
