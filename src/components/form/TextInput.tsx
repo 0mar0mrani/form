@@ -1,11 +1,11 @@
-export default function TextInput({ placeholderText, onInput, isValid}) {
+export default function TextInput({ placeholderText, onChange, isValid}) {
 	return (
 		<div>
 			<input
 				type="text" 
 				placeholder={placeholderText} 
 				className="form__input" 
-				onInput={onInput}
+				onChange={onChange}
 			/>
 
 			<div 

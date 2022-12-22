@@ -25,7 +25,7 @@ export default function Form() {
 		setFormValidationBasedOnElementValidation();
 	}, [currentData.firstName.value, currentData.lastName.value,])
 
-	function handleFirstNameInput(event) {
+	function handleFirstNameChange(event: React.ChangeEvent<HTMLInputElement>) {
 		const key = 'firstName';
 		const textInputValue = event.currentTarget.value;
 		const isInputValid = returnContainsOnlyLetters(textInputValue);
@@ -34,7 +34,7 @@ export default function Form() {
 		setCurrentDataIsValid(key, isInputValid);
 	}
 
-	function handleLastNameInput(event) {
+	function handleLastNameChange(event: React.ChangeEvent<HTMLInputElement>) {
 		const key = 'lastName';
 		const textInputValue = event.currentTarget.value;
 		const isInputValid = returnContainsOnlyLetters(textInputValue);
@@ -103,13 +103,13 @@ export default function Form() {
 		<form action="/">
 			<TextInput 
 				placeholderText="Fornavn" 
-				onInput={handleFirstNameInput} 
+				onChange={handleFirstNameChange} 
 				isValid={currentData.firstName.isValid}
 			/>
 
 			<TextInput 
 				placeholderText="Etternavn" 
-				onInput={handleLastNameInput} 
+				onChange={handleLastNameChange} 
 				isValid={currentData.lastName.isValid}
 			/>
 
