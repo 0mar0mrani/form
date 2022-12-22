@@ -27,6 +27,7 @@ export default function Form() {
 		const isInputValid = returnContainsOnlyLetters(textInputValue);
 
 		setCurrentDataValue(key, textInputValue);
+		setCurrentDataIsValid(key, isInputValid);
 	}
 
 	function handleLastNameInput(event) {
@@ -35,6 +36,7 @@ export default function Form() {
 		const isInputValid = returnContainsOnlyLetters(textInputValue);
 
 		setCurrentDataValue(key, textInputValue);
+		setCurrentDataIsValid(key, isInputValid);
 	}
 
 	function setCurrentDataValue(key: string, textInputValue: string) {
@@ -43,6 +45,16 @@ export default function Form() {
 			[key]: {
 				...currentData[key], 
 				value: textInputValue, 
+			},
+		}));
+	}
+
+	function setCurrentDataIsValid(key, isInputValid) {
+		setCurrentData(currentData => ({
+			...currentData, 
+			[key]: {
+				...currentData[key], 
+				isValid: isInputValid, 
 			},
 		}));
 	}
