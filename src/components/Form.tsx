@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import TextInput from './form/TextInput.tsx'
 import PrimaryButton from './form/PrimaryButton.tsx'
 import SelectInput from './form/SelectInput.tsx'
+import RadioInput from './form/RadioInput.tsx'
 
 export default function Form() {
 	const [ isFormValid, setFormValidation ] = useState(false);
@@ -23,21 +24,33 @@ export default function Form() {
 			value: '',
 			isValid: false,
 			message: '',
+		},
+
+		gender: {
+			value: '',
+			isValid: false,
+			message: '',
 		}
 	})
 
 	const selectOptions = [
 		{ value: 'norway', label: 'Norge'},
 		{ value: 'denmark', label: 'Danmark'},
-		{ value: 'sweeden', label: 'Sverige'},
+		{ value: 'sweden', label: 'Sverige'},
+	]
+
+	const radioOptions = [
+		{ value: 'male', label: 'Mann'},
+		{ value: 'female', label: 'Kvinne'},
+		{ value: 'other', label: 'Annet'},
+		{ value: 'no', label: 'Ønsker ikke å oppgi'},
 	]
 	
-
 	useEffect(() => {
 		setFormValidationBasedOnElementValidation();
-	}, [currentData.firstName.value, currentData.lastName.value,])
+	}, [currentData.firstName.value, currentData.lastName.value, currentData.country.value, currentData.gender.value])
 
-	function handleFirstNameChange(event: React.ChangeEvent<HTMLInputElement>) {
+	function handleFirstNameChange(event: InputEvent | null) {
 		const key = 'firstName';
 		const textInputValue = event.currentTarget.value;
 		const isInputValid = returnContainsOnlyLetters(textInputValue);
@@ -46,9 +59,9 @@ export default function Form() {
 		setCurrentDataIsValid(key, isInputValid);
 	}
 
-	function handleLastNameChange(event: React.ChangeEvent<HTMLInputElement>) {
+	function handleLastNameChange(event) {
 		const key = 'lastName';
-		const textInputValue = event.currentTarget.value;
+		const textInputValue = event.target.value;
 		const isInputValid = returnContainsOnlyLetters(textInputValue);
 
 		setCurrentDataValue(key, textInputValue);
@@ -64,6 +77,15 @@ export default function Form() {
 		setCurrentDataIsValid(key, isInputValid);
 	}
 
+	function handleGenderChange(event) {
+		const key = 'gender';
+		const radioInputValue = event.target.value;
+		const isInputValid = radioInputValue !== ''; 
+		
+		setCurrentDataValue(key, radioInputValue);
+		setCurrentDataIsValid(key, isInputValid);
+	}
+
 	function setCurrentDataValue(key: string, inputValue: string) {
 		setCurrentData(currentData => ({
 			...currentData, 
@@ -74,7 +96,7 @@ export default function Form() {
 		}));
 	}
 
-	function setCurrentDataIsValid(key, isInputValid) {
+	function setCurrentDataIsValid(key: string, isInputValid: boolean) {
 		setCurrentData(currentData => ({
 			...currentData, 
 			[key]: {
@@ -138,6 +160,12 @@ export default function Form() {
 				onChange={handleCountryChange}
 				isValid={currentData.country.isValid}
 				options={selectOptions}
+			/>
+
+			<RadioInput
+				onChange={handleGenderChange}
+				isValid={currentData.gender.isValid}
+				options={radioOptions}
 			/>
 
 			<PrimaryButton 
