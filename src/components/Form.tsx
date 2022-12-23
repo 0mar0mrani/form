@@ -9,14 +9,12 @@ export default function Form() {
 		firstName: {
 			value: '',
 			isValid: false,
-			type: 'name',
 			message: '',
 		},
 
 		lastName: {
 			value: '',
 			isValid: false,
-			type: 'name',
 			message: '',
 		},
 	})
