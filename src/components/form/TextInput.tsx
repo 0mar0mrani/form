@@ -9,8 +9,8 @@ export default function TextInput({ placeholderText, onChange, isValid}) {
 			/>
 
 			<div 
-				className="form__input-message">
-				{isValid ? '' : 'Feil: Fyll ut med bokstaver (inkludert mellomrom og bindestrek).'}
+				className={`form__input-message ${isValid ? '' : 'form__input-message--visible'}`}>
+					Feil: Fyll ut med bokstaver (inkludert mellomrom og bindestrek)
 			</div>
 		</div>
 	)
