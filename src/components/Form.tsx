@@ -55,6 +55,15 @@ export default function Form() {
 		setCurrentDataIsValid(key, isInputValid);
 	}
 
+	function handleCountryChange(event) {
+		const key = 'country';
+		const selectInputValue = event.target.value;
+		const isInputValid = selectInputValue !== ''; 
+
+		setCurrentDataValue(key, selectInputValue);
+		setCurrentDataIsValid(key, isInputValid);
+	}
+
 	function setCurrentDataValue(key: string, inputValue: string) {
 		setCurrentData(currentData => ({
 			...currentData, 
