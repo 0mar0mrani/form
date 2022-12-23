@@ -55,12 +55,12 @@ export default function Form() {
 		setCurrentDataIsValid(key, isInputValid);
 	}
 
-	function setCurrentDataValue(key: string, textInputValue: string) {
+	function setCurrentDataValue(key: string, inputValue: string) {
 		setCurrentData(currentData => ({
 			...currentData, 
 			[key]: {
 				...currentData[key], 
-				value: textInputValue, 
+				value: inputValue, 
 			},
 		}));
 	}
