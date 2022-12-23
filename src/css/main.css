@@ -1,4 +1,5 @@
 @import './reset.css';
 @import './base.css';
 
-@import './modules/form/PrimaryButton.css'
+@import './modules/form/PrimaryButton.css';
+@import './modules/form/TextInput.css';

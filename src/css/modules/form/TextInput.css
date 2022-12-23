@@ -1,0 +1,13 @@
+.form__input-message {
+	font-size: 2rem;
+	transition: all 0.3s;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.form__input-message--visible {
+	opacity: 1;
+	visibility: unset;
+	pointer-events: unset;
+}
