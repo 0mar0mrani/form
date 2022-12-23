@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 import TextInput from './form/TextInput.tsx'
 import PrimaryButton from './form/PrimaryButton.tsx'
+import SelectInput from './form/SelectInput.tsx'
 
 export default function Form() {
 	const [ isFormValid, setFormValidation ] = useState(false);
@@ -17,7 +18,20 @@ export default function Form() {
 			isValid: false,
 			message: '',
 		},
+
+		country: {
+			value: '',
+			isValid: false,
+			message: '',
+		}
 	})
+
+	const selectOptions = [
+		{ value: 'norway', label: 'Norge'},
+		{ value: 'denmark', label: 'Danmark'},
+		{ value: 'sweeden', label: 'Sverige'},
+	]
+	
 
 	useEffect(() => {
 		setFormValidationBasedOnElementValidation();
@@ -109,6 +123,12 @@ export default function Form() {
 				placeholderText="Etternavn" 
 				onChange={handleLastNameChange} 
 				isValid={currentData.lastName.isValid}
+			/>
+
+			<SelectInput
+				onChange={handleCountryChange}
+				isValid={currentData.country.isValid}
+				options={selectOptions}
 			/>
 
 			<PrimaryButton 
