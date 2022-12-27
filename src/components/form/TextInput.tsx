@@ -1,11 +1,14 @@
-export default function TextInput({ placeholderText, onChange, isValid}) {
+export default function TextInput({name, placeholderText, onChange, isValid}) {
 	return (
-		<div>
+		<div className="form__text">
+			<label htmlFor={ name } className="form__text-header">{ name }</label>
+
 			<input
 				type="text" 
-				placeholder={placeholderText} 
-				className="form__input" 
-				onChange={onChange}
+				id={ name } 
+				placeholder={ placeholderText } 
+				className={`form__input form__input-text ${isValid ? '' : 'form__input-text--invalid'}`} 
+				onChange={ onChange }
 			/>
 
 			<div 
