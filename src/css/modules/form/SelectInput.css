@@ -1,0 +1,19 @@
+.form__select {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.form__select-header {
+	font-size: 2.4rem;
+	font-weight: 500;
+}
+
+.form__input-select {
+	height: 4rem;
+	border: solid 2px black;
+}
+
+.form__input-select--invalid {
+	border: solid 2px red;
+}
