@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 import TextInput from './form/TextInput.tsx'
 import PrimaryButton from './form/PrimaryButton.tsx'
+import SecondaryButton from './form/SecondaryButton.tsx'
 import SelectInput from './form/SelectInput.tsx'
 import RadioInput from './form/RadioInput.tsx'
 
@@ -136,6 +137,9 @@ export default function Form() {
 		}
 	}
 
+	function onReset(event) {
+	}
+
 	function onSubmit(event) {
 		event.preventDefault();
 
@@ -168,6 +172,11 @@ export default function Form() {
 				options={radioOptions}
 			/>
 
+				<SecondaryButton
+					clearMethod={onReset}
+					name={"Avbryt"}
+				/>
+				
 			<PrimaryButton 
 				submitMethod={onSubmit} 
 				isDisabled={!isFormValid}
