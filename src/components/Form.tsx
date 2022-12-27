@@ -142,45 +142,48 @@ export default function Form() {
 
 	function onSubmit(event) {
 		event.preventDefault();
-
-		console.log('Post request!!');
+		console.log(currentData);
 	}
 
 	return (
 		<form action="/">
-			<TextInput 
-				placeholderText="Fornavn" 
-				onChange={handleFirstNameChange} 
-				isValid={currentData.firstName.isValid}
-			/>
+			<fieldset>
+				<legend className="">Personlig Informasjon</legend>
 
-			<TextInput 
-				placeholderText="Etternavn" 
-				onChange={handleLastNameChange} 
-				isValid={currentData.lastName.isValid}
-			/>
+				<TextInput 
+					placeholderText="Fornavn" 
+					onChange={handleFirstNameChange} 
+					isValid={currentData.firstName.isValid}
+				/>
 
-			<SelectInput
-				onChange={handleCountryChange}
-				isValid={currentData.country.isValid}
-				options={selectOptions}
-			/>
+				<TextInput 
+					placeholderText="Etternavn" 
+					onChange={handleLastNameChange} 
+					isValid={currentData.lastName.isValid}
+				/>
 
-			<RadioInput
-				onChange={handleGenderChange}
-				isValid={currentData.gender.isValid}
-				options={radioOptions}
-			/>
+				<SelectInput
+					onChange={handleCountryChange}
+					isValid={currentData.country.isValid}
+					options={selectOptions}
+				/>
+
+				<RadioInput
+					onChange={handleGenderChange}
+					isValid={currentData.gender.isValid}
+					options={radioOptions}
+				/>
 
 				<SecondaryButton
 					clearMethod={onReset}
 					name={"Avbryt"}
 				/>
 				
-			<PrimaryButton 
-				submitMethod={onSubmit} 
-				isDisabled={!isFormValid}
-			/>
+				<PrimaryButton 
+					submitMethod={onSubmit} 
+					isDisabled={!isFormValid}
+				/>
+			</fieldset>
 		</form>
 	)
 }
