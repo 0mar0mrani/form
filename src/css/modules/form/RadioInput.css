@@ -1,0 +1,10 @@
+.form__radio {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.form__radio-header {
+	font-size: 2.4rem;
+	font-weight: 500;
+}
