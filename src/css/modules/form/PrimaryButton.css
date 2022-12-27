@@ -1,4 +1,9 @@
+.form__button {
+	cursor: pointer;
+}
+
 .form__button--disabled {
 	background-color: red;
 	pointer-events: none;
+	cursor: none;
 }
