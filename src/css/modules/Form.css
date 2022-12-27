@@ -1,0 +1,46 @@
+.form {
+	width: 100dvw;
+	min-height: 100dvh;
+	margin-top: 5rem;
+}
+
+.form__fieldset {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 2rem;
+}
+
+.form__fieldset:last-child {
+}
+
+.form__legend {
+	font-size: 4rem;
+}
+
+.form__input-message {
+	color: red;
+}
+
+.form__input-message {
+	font-size: 2rem;
+	transition: all 0.3s;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	height: 0;
+}
+
+.form__input-message--visible {
+	opacity: 1;
+	visibility: unset;
+	pointer-events: unset;
+	height: auto;
+}
+
+.form__buttons {
+	align-self: center;
+	display: flex;
+	gap: 2rem;
+	margin-top: 4rem;
+}
