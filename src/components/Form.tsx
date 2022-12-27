@@ -147,8 +147,8 @@ export default function Form() {
 
 	return (
 		<form action="/">
-			<fieldset>
-				<legend className="">Personlig Informasjon</legend>
+			<fieldset className="form__fieldset">
+				<legend className="form__legend">Personlig Informasjon</legend>
 
 				<TextInput 
 					placeholderText="Fornavn" 
@@ -183,6 +183,7 @@ export default function Form() {
 					submitMethod={onSubmit} 
 					isDisabled={!isFormValid}
 				/>
+				</div>
 			</fieldset>
 		</form>
 	)
