@@ -146,43 +146,48 @@ export default function Form() {
 	}
 
 	return (
-		<form action="/">
+		<form action="/" className="form">
 			<fieldset className="form__fieldset">
 				<legend className="form__legend">Personlig Informasjon</legend>
 
 				<TextInput 
-					placeholderText="Fornavn" 
+					name={"Fornavn"}
+					placeholderText="Ola" 
 					onChange={handleFirstNameChange} 
 					isValid={currentData.firstName.isValid}
 				/>
 
 				<TextInput 
-					placeholderText="Etternavn" 
+					name={"Etternavn"}
+					placeholderText="Normann" 
 					onChange={handleLastNameChange} 
 					isValid={currentData.lastName.isValid}
 				/>
 
 				<SelectInput
+					name={"Land"}
 					onChange={handleCountryChange}
 					isValid={currentData.country.isValid}
 					options={selectOptions}
 				/>
 
 				<RadioInput
+					name={"Kjønn"}
 					onChange={handleGenderChange}
 					isValid={currentData.gender.isValid}
 					options={radioOptions}
 				/>
 
-				<SecondaryButton
-					clearMethod={onReset}
-					name={"Avbryt"}
-				/>
-				
-				<PrimaryButton 
-					submitMethod={onSubmit} 
-					isDisabled={!isFormValid}
-				/>
+				<div className="form__buttons">
+					<SecondaryButton
+						clearMethod={onReset}
+						name={"Avbryt"}
+					/>
+					
+					<PrimaryButton 
+						submitMethod={onSubmit} 
+						isDisabled={!isFormValid}
+					/>
 				</div>
 			</fieldset>
 		</form>
