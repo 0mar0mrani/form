@@ -1,6 +1,8 @@
-export default function SelectInput({onChange, isValid, options}) {
+export default function SelectInput({ name, onChange, isValid, options}) {
 	return (
-		<div>
+		<div className="form__radio">
+			<div htmlFor="" className="form__radio-header">{ name }</div>
+
 			{options.map((option) => (
 				<div key={option.value}>
 					<label htmlFor={option.value}> {option.label} </label>
