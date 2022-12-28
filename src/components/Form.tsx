@@ -185,6 +185,7 @@ export default function Form() {
 					/>
 					
 					<PrimaryButton 
+						name={"Send inn"}
 						submitMethod={onSubmit} 
 						isDisabled={!isFormValid}
 					/>
