@@ -142,6 +142,16 @@ export default function Form() {
 		const serializedForm = JSON.stringify(form);
 		window.localStorage.setItem('formLocal', serializedForm);
 	}
+
+	function getFormLocally() {
+		const localForm = window.localStorage.getItem('formLocal');
+		const parsedLocalForm = JSON.parse(localForm);
+
+		if (localForm) {
+			setCurrentData(parsedLocalForm);
+		} 
+	}
+
 	function onReset(event) {
 	}
 
