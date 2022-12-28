@@ -1,7 +1,7 @@
 export default function Button({name, submitMethod, isDisabled }) {
 	return (
 		<button
-			className={`form__button ${isDisabled ? 'form__button--disabled' : ''}`}
+			className={`form__button-primary ${isDisabled ? 'form__button-primary--disabled' : ''}`}
 			onClick={submitMethod}>
 			{name}
 		</button>
