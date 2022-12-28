@@ -1,4 +1,4 @@
-export default function SelectInput({ name, onChange, isValid, options}) {
+export default function SelectInput({ name, stateValue, onChange, isValid, options}) {
 	return (
 		<div className="form__radio">
 			<div htmlFor="" className="form__radio-header">{ name }</div>
@@ -14,6 +14,7 @@ export default function SelectInput({ name, onChange, isValid, options}) {
 							id={option.value} 
 							name="gender" 
 							onChange={onChange}
+							checked={option.value === stateValue ? true : false}
 						/>	
 					</div>
 				))}

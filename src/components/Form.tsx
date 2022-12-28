@@ -46,7 +46,7 @@ export default function Form() {
 		{ value: 'other', label: 'Annet'},
 		{ value: 'no', label: 'Ønsker ikke å oppgi'},
 	]
-	
+
 	useEffect(() => {
 		getFormLocally();
 	}, [])
@@ -168,10 +168,11 @@ export default function Form() {
 	return (
 		<form action="/" className="form">
 			<fieldset className="form__fieldset">
-				<legend className="form__legend">Personlig Informasjon</legend>
+				<legend className="form__legend">Personlig informasjon</legend>
 
 				<TextInput 
 					name={"Fornavn"}
+					stateValue={currentData.firstName.value}
 					placeholderText="Ola" 
 					onChange={handleFirstNameChange} 
 					isValid={currentData.firstName.isValid}
@@ -179,6 +180,7 @@ export default function Form() {
 
 				<TextInput 
 					name={"Etternavn"}
+					stateValue={currentData.lastName.value}
 					placeholderText="Normann" 
 					onChange={handleLastNameChange} 
 					isValid={currentData.lastName.isValid}
@@ -186,6 +188,7 @@ export default function Form() {
 
 				<SelectInput
 					name={"Land"}
+					stateValue={currentData.country.value}
 					onChange={handleCountryChange}
 					isValid={currentData.country.isValid}
 					options={selectOptions}
@@ -193,6 +196,7 @@ export default function Form() {
 
 				<RadioInput
 					name={"Kjønn"}
+					stateValue={currentData.gender.value}
 					onChange={handleGenderChange}
 					isValid={currentData.gender.isValid}
 					options={radioOptions}

@@ -1,9 +1,15 @@
-export default function SelectInput({name, onChange, isValid, options}) {
+export default function SelectInput({name, stateValue, onChange, isValid, options}) {
 	return (
 		<div className="form__select">
-			<label htmlFor="country" className="form__select-header">{ name }</label>
+			<label htmlFor="country" className="form__select-header" >{ name }</label>
 
-			<select name="country"  id="country" onChange={onChange} defaultValue="" className={`form__input-select ${isValid ? '' : 'form__input-select--invalid'}`}>
+			<select 
+			name="country"  
+			id="country" 
+			onChange={onChange} 
+			value={stateValue} 
+			className={`form__input-select ${isValid ? '' : 'form__input-select--invalid'}`}>
+
 				<option value="" disabled>Velg et alternativ</option>
 
 				{options.map((option) => (
