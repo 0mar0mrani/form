@@ -3,6 +3,7 @@
 
 @import './modules/Form.css';
 @import './modules/form/PrimaryButton.css';
+@import './modules/form/SecondaryButton.css';
 @import './modules/form/TextInput.css';
 @import './modules/form/RadioInput.css';
 @import './modules/form/SelectInput.css';
