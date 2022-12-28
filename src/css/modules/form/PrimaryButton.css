@@ -1,9 +1,15 @@
-.form__button {
+.form__button-primary {
+	padding: 1rem 2rem;
+	font-size: 3rem;
+	border: solid 2px #212427;
+	border-radius: 4px;
+	background-color: #3a10e5;
+	color: #fff;
 	cursor: pointer;
 }
 
-.form__button--disabled {
-	background-color: red;
+.form__button-primary--disabled {
+	opacity: 0.3;
 	pointer-events: none;
 	cursor: none;
 }
