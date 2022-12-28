@@ -137,6 +137,11 @@ export default function Form() {
 		}
 	}
 
+	function storeFormLocally() {
+		const form = currentData;
+		const serializedForm = JSON.stringify(form);
+		window.localStorage.setItem('formLocal', serializedForm);
+	}
 	function onReset(event) {
 	}
 
