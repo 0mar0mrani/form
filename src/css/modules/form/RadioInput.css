@@ -14,3 +14,7 @@
 	border: solid 2px #212427;
 	border-radius: 4px;
 }
+
+.form__radio-container--invalid {
+	border: solid 2px red;
+}

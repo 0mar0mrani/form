@@ -3,7 +3,7 @@ export default function SelectInput({ name, stateValue, onChange, isValid, optio
 		<div className="form__radio">
 			<div htmlFor="" className="form__radio-header">{ name }</div>
 
-			<div className="form__radio-container">
+			<div className={`form__radio-container ${isValid ? '' : 'form__radio-container--invalid'}`}>
 				{options.map((option) => (
 					<div key={option.value}>
 						<label htmlFor={option.value}> {option.label} </label>
