@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 
-import TextInput from './form/TextInput.tsx'
 import PrimaryButton from './form/PrimaryButton.tsx'
+import RadioInput from './form/RadioInput.tsx'
 import SecondaryButton from './form/SecondaryButton.tsx'
 import SelectInput from './form/SelectInput.tsx'
-import RadioInput from './form/RadioInput.tsx'
+import TextInput from './form/TextInput.tsx'
 
 export default function Form() {
 	const [ isFormValid, setFormValidation ] = useState(false);
@@ -158,6 +158,18 @@ export default function Form() {
 	}
 
 	function onReset(event) {
+		event.preventDefault();
+
+		for (const key in currentData) {
+			setCurrentData(currentData => ({
+				...currentData, 
+				[key]: {
+					value: '',
+					isValid: false,
+					message: '',
+				},
+			}));
+		}
 	}
 
 	function onSubmit(event) {
