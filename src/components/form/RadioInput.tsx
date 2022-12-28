@@ -22,7 +22,7 @@ export default function SelectInput({ name, stateValue, onChange, isValid, optio
 
 			<div 
 				className={`form__input-message ${isValid ? '' : 'form__input-message--visible'}`}>
-					Feil: Velg et alternativ.
+					Velg et alternativ.
 			</div>
 		</div>
 	)

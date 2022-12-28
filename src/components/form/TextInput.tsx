@@ -14,7 +14,7 @@ export default function TextInput({name, stateValue, placeholderText, onChange, 
 
 			<div 
 				className={`form__input-message ${isValid ? '' : 'form__input-message--visible'}`}>
-					Feil: Fyll ut med bokstaver (inkludert mellomrom og bindestrek)
+					Fyll ut med bokstaver (inkludert mellomrom og bindestrek).
 			</div>
 		</div>
 	)
