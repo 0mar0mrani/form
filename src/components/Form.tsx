@@ -53,6 +53,7 @@ export default function Form() {
 	
 	useEffect(() => {
 		setFormValidationBasedOnElementValidation();
+		storeFormLocally();
 	}, [currentData.firstName.value, currentData.lastName.value, currentData.country.value, currentData.gender.value])
 
 	function handleFirstNameChange(event: InputEvent | null) {
