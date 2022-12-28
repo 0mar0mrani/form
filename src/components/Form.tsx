@@ -48,6 +48,10 @@ export default function Form() {
 	]
 	
 	useEffect(() => {
+		getFormLocally();
+	}, [])
+	
+	useEffect(() => {
 		setFormValidationBasedOnElementValidation();
 	}, [currentData.firstName.value, currentData.lastName.value, currentData.country.value, currentData.gender.value])
 
