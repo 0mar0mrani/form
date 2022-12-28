@@ -12,6 +12,7 @@
 .form__input-select {
 	height: 4rem;
 	border: solid 2px black;
+	border-radius: 4px;
 }
 
 .form__input-select--invalid {
