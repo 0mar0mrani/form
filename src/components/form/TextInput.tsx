@@ -1,4 +1,6 @@
-export default function TextInput({name, stateValue, placeholderText, onChange, isValid}) {
+import { React } from 'react'
+
+export default function TextInput({name, stateValue, placeholderText, onChange, isValid, errorMessage}) {
 	return (
 		<div className="form__text">
 			<label htmlFor={ name } className="form__text-header">{ name }</label>
@@ -14,7 +16,7 @@ export default function TextInput({name, stateValue, placeholderText, onChange, 
 
 			<div 
 				className={`form__input-message ${isValid ? '' : 'form__input-message--visible'}`}>
-					Fyll ut med bokstaver (inkludert mellomrom og bindestrek).
+					{errorMessage}
 			</div>
 		</div>
 	)

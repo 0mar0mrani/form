@@ -1,3 +1,5 @@
+import { React } from 'react'
+
 export default function SelectInput({name, stateValue, onChange, isValid, options}) {
 	return (
 		<div className="form__select">
