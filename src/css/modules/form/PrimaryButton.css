@@ -10,6 +10,5 @@
 
 .form__button-primary--disabled {
 	opacity: 0.3;
-	pointer-events: none;
-	cursor: none;
+	cursor: not-allowed;
 }
