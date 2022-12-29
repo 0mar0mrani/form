@@ -62,17 +62,8 @@ export default function Form() {
 		storeFormLocally();
 	}, [currentData.firstName.value, currentData.lastName.value, currentData.country.value, currentData.gender.value])
 
-	function handleFirstNameChange(event: React.ChangeEvent<HTMLInputElement>) {
-		const key = 'firstName';
-		const textInputValue = event.target.value;
-		const isInputValid = returnContainsOnlyLetters(textInputValue);
-
-		setCurrentDataValue(key, textInputValue);
-		setCurrentDataIsValid(key, isInputValid);
-	}
-
-	function handleLastNameChange(event: React.ChangeEvent<HTMLInputElement>) {
-		const key = 'lastName';
+	function handleNameChange(event: React.ChangeEvent<HTMLInputElement>) {
+		const key = event.target.dataset.stateName;
 		const textInputValue = event.target.value;
 		const isInputValid = returnContainsOnlyLetters(textInputValue);
 
@@ -188,19 +179,21 @@ export default function Form() {
 				<legend className="form__legend">Personlig informasjon</legend>
 
 				<TextInput 
+					stateName={"firstName"}
 					name={"Fornavn"}
 					stateValue={currentData.firstName.value}
 					placeholderText="Ola" 
-					onChange={handleFirstNameChange} 
+					onChange={handleNameChange} 
 					isValid={currentData.firstName.isValid}
 					errorMessage={"Fyll ut med bokstaver (inkludert mellomrom og bindestrek)."}
 				/>
 
 				<TextInput 
+					stateName={"lastName"}
 					name={"Etternavn"}
 					stateValue={currentData.lastName.value}
 					placeholderText="Normann" 
-					onChange={handleLastNameChange} 
+					onChange={handleNameChange} 
 					isValid={currentData.lastName.isValid}
 					errorMessage={"Fyll ut med bokstaver (inkludert mellomrom og bindestrek)."}
 				/>
