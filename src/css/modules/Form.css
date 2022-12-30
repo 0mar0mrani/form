@@ -11,9 +11,6 @@
 	padding: 2rem;
 }
 
-.form__fieldset:last-child {
-}
-
 .form__legend {
 	font-size: 4rem;
 }

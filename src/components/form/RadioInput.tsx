@@ -3,12 +3,18 @@ import { React } from 'react'
 export default function SelectInput({ name, stateValue, onChange, isValid, options}) {
 	return (
 		<div className="form__radio">
-			<div htmlFor="" className="form__radio-header">{ name }</div>
+			<div 
+				className="form__radio-header">
+				{name}
+			</div>
 
 			<div className={`form__radio-container ${isValid ? '' : 'form__radio-container--invalid'}`}>
 				{options.map((option) => (
 					<div key={option.value}>
-						<label htmlFor={option.value}> {option.label} </label>
+						<label 
+							htmlFor={option.value}> 
+							{option.label} 
+						</label>
 
 						<input
 							type="radio" 
@@ -24,7 +30,7 @@ export default function SelectInput({ name, stateValue, onChange, isValid, optio
 
 			<div 
 				className={`form__input-message ${isValid ? '' : 'form__input-message--visible'}`}>
-					Velg et alternativ.
+				Velg et alternativ.
 			</div>
 		</div>
 	)

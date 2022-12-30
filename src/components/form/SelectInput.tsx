@@ -3,16 +3,24 @@ import { React } from 'react'
 export default function SelectInput({name, stateValue, onChange, isValid, options}) {
 	return (
 		<div className="form__select">
-			<label htmlFor="country" className="form__select-header" >{ name }</label>
+			<label 
+				htmlFor="country" 
+				className="form__select-header">
+				{name}
+			</label>
 
 			<select 
-			name="country"  
-			id="country" 
-			onChange={onChange} 
-			value={stateValue} 
-			className={`form__input-select ${isValid ? '' : 'form__input-select--invalid'}`}>
+				name="country"  
+				id="country" 
+				onChange={onChange} 
+				value={stateValue} 
+				className={`form__input-select ${isValid ? '' : 'form__input-select--invalid'}`}>
 
-				<option value="" disabled>Velg et alternativ</option>
+				<option 
+					value="" 
+					disabled>
+					Velg et alternativ
+				</option>
 
 				{options.map((option) => (
 					<option key={option.value}> {option.label} </option>
@@ -21,7 +29,7 @@ export default function SelectInput({name, stateValue, onChange, isValid, option
 
 			<div 
 				className={`form__input-message ${isValid ? '' : 'form__input-message--visible'}`}>
-					Velg et alternativ.
+				Velg et alternativ.
 			</div>
 		</div>
 	)
