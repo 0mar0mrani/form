@@ -8,9 +8,9 @@ import TextInput from './form/TextInput.js'
 
 export default function Form() {
 	interface currentData {
-		value: string
-		isValid: boolean 
-		message: string
+		value: String
+		isValid: Boolean 
+		message: String
 	}
 
 	const [ isFormValid, setFormValidation ] = useState<boolean>(false);
